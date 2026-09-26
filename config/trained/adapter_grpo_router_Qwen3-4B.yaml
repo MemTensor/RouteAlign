@@ -1,0 +1,23 @@
+adapter:
+  baseline_config: config/baseline_config_performance_cost.yaml
+  seed: 42
+  train_ratio: 0.7
+  ood_datasets: []
+  output_dir: data/seed42_split0.7
+  question_bank:
+    per_dataset_samples: 100
+    per_dataset_overrides: {}
+    max_question_chars: 30000
+    max_answer_chars: 200000
+  metadata_model:
+    model: deepseek-v4-flash
+    base_url: METADATA_BASE_URL
+    api_key: METADATA_API_KEY
+    temperature: 0.0
+    timeout: 1200
+    max_tokens: 8192
+  demo_router_config: config/trained/demo_router_grpo_router_Qwen3-4B.yaml
+  evaluation:
+    max_samples_per_dataset: null
+    eval_tag: grpo_router_Qwen3-4B
+  max_workers: 32

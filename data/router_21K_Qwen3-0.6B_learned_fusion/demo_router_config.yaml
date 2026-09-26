@@ -1,0 +1,72 @@
+# Demo Router 配置
+#
+# Demo Router 项目自身的配置：各步骤所需 LLM、画像聚合参数、路由策略、数据路径。
+# api_key / base_url 支持环境变量名引用（全大写形式，如 GRADER_API_KEY 会从环境变量读取）。
+#
+# DemoRouter3_train：任务画像模型替换为本地 sglang 服务的微调模型
+# （router_21K / grpo_router 系列，见 config/trained_models.yaml），
+# 提示词风格为 sft_v3（与训练数据 task-profile-sft-v3 逐字一致）。
+
+demo_router:
+  # 打分模型：对模型回答做 10 维能力打分（离线建模阶段）
+  grading_model:
+    model: gpt-5.4
+    base_url: GRADER_BASE_URL
+    api_key: GRADER_API_KEY
+    temperature: 0.0
+    timeout: 1200
+    max_tokens: 8192
+
+  # 任务画像生成模型：预测能力需求权重 / 难度（线上路由阶段）
+  # 本地 sglang 服务的微调模型；端口随模型变化，逐模型配置由
+  # adapter/run_trained_eval.py 生成到 config/trained/demo_router_<model>.yaml。
+  task_profile_model:
+    model: router_21K_Qwen3-0.6B
+    base_url: http://127.0.0.1:30031/v1
+    api_key: none
+    temperature: 0.0
+    timeout: 600
+    max_tokens: 1024
+    prompt_style: sft_v3
+
+  # 画像聚合参数
+  profiling:
+    # 打分相关性阈值：relevance 超过该值才纳入能力得分计算（初始 0.5，可调）
+    relevance_threshold: 0.5
+    # 有效样本置信度阈值：样本数 < low 为 none，< medium 为 low，< high 为 medium，否则 high
+    confidence_thresholds:
+      low: 3
+      medium: 10
+      high: 30
+    # 全局档位划分比例（相对排序）：
+    # 按 L4 得分前 expert 比例为专家；剔除后按 L3 前 strong 比例为强；
+    # 再剔除后按 L2 前 standard 比例为标准；其余为弱。
+    tier_ratios:
+      expert: 0.25
+      strong: 0.33
+      standard: 0.50
+
+  # 路由策略
+  routing:
+    # best_performance（已实现）/ cost_first / speed_first（预留，未实现）
+    mode: best_performance
+    # 硬成本上限（每百万输出 token 价格），null 表示不限制
+    max_cost_per_million_output: null
+    # 硬延迟上限（首 token 延迟 ms），null 表示不限制
+    max_first_token_latency_ms: null
+    # 任务难度 → 模型档位映射（默认 L1→weak, L2→standard, L3→strong, L4→expert）
+    difficulty_tier_map: null
+
+  # 数据路径
+  paths:
+    # 即插即用题库（由外部准备，如适配模块构建）
+    question_bank: data/seed42_split0.7/question_bank.jsonl
+    # 模型池服务属性配置（用户自行配置）
+    model_pool: config/model_pool.yaml
+    # 多维打分结果输出（JSONL，支持断点续跑）
+    grading_results: data/seed42_split0.7/grading_results.jsonl
+    # 模型画像输出
+    model_profiles: data/seed42_split0.7/model_profiles.json
+
+  # LLM 调用并发数
+  max_workers: 15

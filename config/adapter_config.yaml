@@ -1,0 +1,49 @@
+# DemoRouter 适配模块配置（DemoRouter3_train）
+#
+# 与 DemoRouter3 的区别：数据固定为 seed42_split0.7；任务画像模型为本地
+# sglang 服务的微调模型（见 config/trained_models.yaml）；评估并发提高（本地服务无限流）。
+
+adapter:
+  # LLMRouterBench 数据来源（复用项目根目录的 baseline 配置）
+  baseline_config: config/baseline_config_performance_cost.yaml
+
+  # 训练/测试划分（与其他 baseline 一致：按数据集+prompt 划分，防泄漏）
+  seed: 42
+  train_ratio: 0.7
+  ood_datasets: []
+
+  # 所有中间产物与结果的输出目录
+  output_dir: data/seed42_split0.7
+
+  # 题库构建（从训练集中按数据集分层抽样）
+  question_bank:
+    # 默认每个数据集抽样题数（先小规模验证流程，后续可调大）
+    per_dataset_samples: 100
+    # 对单个数据集覆盖抽样数，如 {aime: 20, swe-bench: 5}
+    per_dataset_overrides: {}
+    # 题目/回答文本长度上限（字符），超长截断
+    max_question_chars: 30000
+    max_answer_chars: 200000
+
+  # 强模型：为每道题标注元数据与能力权重
+  metadata_model:
+    model: deepseek-v4-flash
+    base_url: METADATA_BASE_URL
+    api_key: METADATA_API_KEY
+    temperature: 0.0
+    timeout: 1200
+    max_tokens: 8192
+
+  # Demo Router 侧配置文件（离线画像与线上路由使用）
+  demo_router_config: config/demo_router_config.yaml
+
+  # 评估参数
+  evaluation:
+    # 每个数据集最多评估的测试题数（随机抽样，种子同 seed），null 表示全量测试集。
+    max_samples_per_dataset: null
+    # 评估标签：非空时输出 routing_records_<tag>.jsonl / eval_result_<tag>.json，
+    # 逐模型评估时由 run_trained_eval 生成的 config/trained/adapter_<model>.yaml 设置。
+    eval_tag: null
+
+  # LLM 调用并发数：本地 sglang 服务，无限流
+  max_workers: 32

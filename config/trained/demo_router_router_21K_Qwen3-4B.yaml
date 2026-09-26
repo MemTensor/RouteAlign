@@ -1,0 +1,37 @@
+demo_router:
+  grading_model:
+    model: gpt-5.4
+    base_url: GRADER_BASE_URL
+    api_key: GRADER_API_KEY
+    temperature: 0.0
+    timeout: 1200
+    max_tokens: 8192
+  task_profile_model:
+    model: router_21K_Qwen3-4B
+    base_url: http://127.0.0.1:30033/v1
+    api_key: none
+    temperature: 0.0
+    timeout: 600
+    max_tokens: 1024
+    prompt_style: sft_v3
+  profiling:
+    relevance_threshold: 0.5
+    confidence_thresholds:
+      low: 3
+      medium: 10
+      high: 30
+    tier_ratios:
+      expert: 0.25
+      strong: 0.33
+      standard: 0.5
+  routing:
+    mode: best_performance
+    max_cost_per_million_output: null
+    max_first_token_latency_ms: null
+    difficulty_tier_map: null
+  paths:
+    question_bank: data/seed42_split0.7/question_bank.jsonl
+    model_pool: config/model_pool.yaml
+    grading_results: data/seed42_split0.7/grading_results.jsonl
+    model_profiles: data/seed42_split0.7/model_profiles.json
+  max_workers: 15

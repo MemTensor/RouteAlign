@@ -1,0 +1,301 @@
+{
+  "total_queries": 3738,
+  "difficulty_tier_matrix": {
+    "L1": {
+      "weak": 1440,
+      "standard": 0,
+      "strong": 0,
+      "expert": 0
+    },
+    "L2": {
+      "weak": 0,
+      "standard": 1394,
+      "strong": 0,
+      "expert": 0
+    },
+    "L3": {
+      "weak": 0,
+      "standard": 0,
+      "strong": 904,
+      "expert": 0
+    },
+    "L4": {
+      "weak": 0,
+      "standard": 0,
+      "strong": 0,
+      "expert": 0
+    }
+  },
+  "target_matched_tier_matrix": {
+    "weak": {
+      "weak": 1440,
+      "standard": 0,
+      "strong": 0,
+      "expert": 0
+    },
+    "standard": {
+      "weak": 0,
+      "standard": 1394,
+      "strong": 0,
+      "expert": 0
+    },
+    "strong": {
+      "weak": 0,
+      "standard": 0,
+      "strong": 904,
+      "expert": 0
+    },
+    "expert": {
+      "weak": 0,
+      "standard": 0,
+      "strong": 0,
+      "expert": 0
+    }
+  },
+  "fallback": {
+    "total": 0,
+    "ratio": 0.0,
+    "by_target_tier": {}
+  },
+  "over_routing": {
+    "total": 0,
+    "ratio": 0.0,
+    "by_dataset": {},
+    "by_primary_capability": {},
+    "top_examples": []
+  },
+  "dataset_summary": {
+    "aime": {
+      "count": 18,
+      "difficulty_distribution": {
+        "L3": 13,
+        "L2": 5
+      },
+      "tier_distribution": {
+        "strong": 13,
+        "standard": 5
+      },
+      "over_routing_count": 0,
+      "over_routing_ratio": 0.0,
+      "avg_cost": 0.079951,
+      "accuracy": 83.33
+    },
+    "arenahard": {
+      "count": 226,
+      "difficulty_distribution": {
+        "L3": 57,
+        "L2": 140,
+        "L1": 29
+      },
+      "tier_distribution": {
+        "strong": 57,
+        "standard": 140,
+        "weak": 29
+      },
+      "over_routing_count": 0,
+      "over_routing_ratio": 0.0,
+      "avg_cost": 0.029497,
+      "accuracy": 78.1
+    },
+    "gpqa": {
+      "count": 60,
+      "difficulty_distribution": {
+        "L2": 43,
+        "L3": 17
+      },
+      "tier_distribution": {
+        "standard": 43,
+        "strong": 17
+      },
+      "over_routing_count": 0,
+      "over_routing_ratio": 0.0,
+      "avg_cost": 0.034381,
+      "accuracy": 81.67
+    },
+    "hle": {
+      "count": 648,
+      "difficulty_distribution": {
+        "L3": 421,
+        "L2": 225,
+        "L1": 2
+      },
+      "tier_distribution": {
+        "strong": 421,
+        "standard": 225,
+        "weak": 2
+      },
+      "over_routing_count": 0,
+      "over_routing_ratio": 0.0,
+      "avg_cost": 0.060704,
+      "accuracy": 26.08
+    },
+    "livecodebench": {
+      "count": 317,
+      "difficulty_distribution": {
+        "L3": 181,
+        "L2": 116,
+        "L1": 20
+      },
+      "tier_distribution": {
+        "strong": 181,
+        "standard": 116,
+        "weak": 20
+      },
+      "over_routing_count": 0,
+      "over_routing_ratio": 0.0,
+      "avg_cost": 0.05664,
+      "accuracy": 83.6
+    },
+    "livemathbench": {
+      "count": 37,
+      "difficulty_distribution": {
+        "L2": 24,
+        "L3": 5,
+        "L1": 8
+      },
+      "tier_distribution": {
+        "standard": 24,
+        "strong": 5,
+        "weak": 8
+      },
+      "over_routing_count": 0,
+      "over_routing_ratio": 0.0,
+      "avg_cost": 0.032741,
+      "accuracy": 81.08
+    },
+    "mmlupro": {
+      "count": 900,
+      "difficulty_distribution": {
+        "L2": 633,
+        "L1": 250,
+        "L3": 17
+      },
+      "tier_distribution": {
+        "standard": 633,
+        "weak": 250,
+        "strong": 17
+      },
+      "over_routing_count": 0,
+      "over_routing_ratio": 0.0,
+      "avg_cost": 0.010377,
+      "accuracy": 86.89
+    },
+    "simpleqa": {
+      "count": 1298,
+      "difficulty_distribution": {
+        "L2": 167,
+        "L1": 1131
+      },
+      "tier_distribution": {
+        "standard": 167,
+        "weak": 1131
+      },
+      "over_routing_count": 0,
+      "over_routing_ratio": 0.0,
+      "avg_cost": 0.003981,
+      "accuracy": 58.47
+    },
+    "swe-bench": {
+      "count": 150,
+      "difficulty_distribution": {
+        "L3": 142,
+        "L2": 8
+      },
+      "tier_distribution": {
+        "strong": 142,
+        "standard": 8
+      },
+      "over_routing_count": 0,
+      "over_routing_ratio": 0.0,
+      "avg_cost": 0.072122,
+      "accuracy": 33.33
+    },
+    "tau2": {
+      "count": 84,
+      "difficulty_distribution": {
+        "L2": 33,
+        "L3": 51
+      },
+      "tier_distribution": {
+        "standard": 33,
+        "strong": 51
+      },
+      "over_routing_count": 0,
+      "over_routing_ratio": 0.0,
+      "avg_cost": 0.195526,
+      "accuracy": 73.81
+    }
+  },
+  "difficulty_summary": {
+    "L1": {
+      "count": 1440,
+      "avg_cost": 0.003207,
+      "accuracy": 66.74
+    },
+    "L2": {
+      "count": 1394,
+      "avg_cost": 0.019673,
+      "accuracy": 69.87
+    },
+    "L3": {
+      "count": 904,
+      "avg_cost": 0.086702,
+      "accuracy": 46.74
+    }
+  },
+  "model_selection_by_difficulty": {
+    "claude-sonnet-4": {
+      "L2": 1,
+      "L3": 136
+    },
+    "deepseek-r1-0528": {
+      "L2": 142,
+      "L3": 24,
+      "L1": 15
+    },
+    "deepseek-v3-0324": {
+      "L1": 4,
+      "L2": 8
+    },
+    "deepseek-v3.1-terminus": {
+      "L1": 22,
+      "L2": 7,
+      "L3": 8
+    },
+    "gemini-2.5-flash": {
+      "L1": 2
+    },
+    "gemini-2.5-pro": {
+      "L2": 235,
+      "L3": 14,
+      "L1": 351
+    },
+    "glm-4.6": {
+      "L2": 8,
+      "L1": 6
+    },
+    "gpt-5": {
+      "L3": 720,
+      "L2": 881,
+      "L1": 251
+    },
+    "gpt-5-chat": {
+      "L2": 1
+    },
+    "intern-s1": {
+      "L2": 2
+    },
+    "kimi-k2-0905": {
+      "L1": 4
+    },
+    "qwen3-235b-a22b-2507": {
+      "L2": 32,
+      "L3": 2,
+      "L1": 773
+    },
+    "qwen3-235b-a22b-thinking-2507": {
+      "L2": 77,
+      "L1": 12
+    }
+  }
+}

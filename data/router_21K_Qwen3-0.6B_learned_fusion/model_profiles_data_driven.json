@@ -1,0 +1,3370 @@
+{
+  "claude-sonnet-4": {
+    "model_id": "claude-sonnet-4",
+    "capability_scores": {
+      "instruction_following": {
+        "L1": {
+          "score": 0.784,
+          "effective_sample_count": 881,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6283,
+          "effective_sample_count": 3313,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2568,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "knowledge_qa": {
+        "L1": {
+          "score": 0.2221,
+          "effective_sample_count": 3101,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.4884,
+          "effective_sample_count": 3130,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.1604,
+          "effective_sample_count": 2075,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "reasoning": {
+        "L1": {
+          "score": 0.5135,
+          "effective_sample_count": 3301,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6311,
+          "effective_sample_count": 3327,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.1733,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "coding": {
+        "L1": {
+          "score": 0.8913,
+          "effective_sample_count": 48,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.7933,
+          "effective_sample_count": 446,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3564,
+          "effective_sample_count": 835,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "long_context": {
+        "L1": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "L2": {
+          "score": 0.4593,
+          "effective_sample_count": 350,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3294,
+          "effective_sample_count": 1188,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "data_analysis": {
+        "L1": {
+          "score": 0.56,
+          "effective_sample_count": 22,
+          "confidence": "medium"
+        },
+        "L2": {
+          "score": 0.4836,
+          "effective_sample_count": 275,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.1728,
+          "effective_sample_count": 182,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "multilingual_translation": {
+        "L1": {
+          "score": 0.3754,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.3598,
+          "effective_sample_count": 64,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3897,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "writing": {
+        "L1": {
+          "score": 0.3384,
+          "effective_sample_count": 3289,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.5723,
+          "effective_sample_count": 3311,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2212,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "tool_use": {
+        "L1": {
+          "score": 0.3,
+          "effective_sample_count": 9,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.1978,
+          "effective_sample_count": 94,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.4669,
+          "effective_sample_count": 109,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "safety": {
+        "L1": {
+          "score": 0.2681,
+          "effective_sample_count": 53,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.4862,
+          "effective_sample_count": 499,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2537,
+          "effective_sample_count": 578,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      }
+    },
+    "specialty_tags": [],
+    "service_attributes": {
+      "cost": {
+        "input_price": 2.2899,
+        "output_price": 16.2565,
+        "cache_read_price": 0.0,
+        "cache_write_price": 0.0
+      },
+      "latency": {
+        "avg_first_token_latency_ms": 1000,
+        "avg_output_tokens_per_second": 50,
+        "p95_latency_ms": 10000
+      },
+      "context_window": 200000,
+      "tool_supported": true,
+      "multimodal_supported": [
+        "vision"
+      ],
+      "sensitive_data_allowed": true,
+      "available": true
+    }
+  },
+  "deepseek-r1-0528": {
+    "model_id": "deepseek-r1-0528",
+    "capability_scores": {
+      "instruction_following": {
+        "L1": {
+          "score": 0.8046,
+          "effective_sample_count": 881,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6737,
+          "effective_sample_count": 3312,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3635,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "knowledge_qa": {
+        "L1": {
+          "score": 0.3209,
+          "effective_sample_count": 3101,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.5281,
+          "effective_sample_count": 3129,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2766,
+          "effective_sample_count": 2075,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "reasoning": {
+        "L1": {
+          "score": 0.5667,
+          "effective_sample_count": 3301,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6873,
+          "effective_sample_count": 3326,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.328,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "coding": {
+        "L1": {
+          "score": 0.9239,
+          "effective_sample_count": 48,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.8354,
+          "effective_sample_count": 445,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.5009,
+          "effective_sample_count": 835,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "long_context": {
+        "L1": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "L2": {
+          "score": 0.5457,
+          "effective_sample_count": 350,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3621,
+          "effective_sample_count": 1188,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "data_analysis": {
+        "L1": {
+          "score": 0.56,
+          "effective_sample_count": 22,
+          "confidence": "medium"
+        },
+        "L2": {
+          "score": 0.5314,
+          "effective_sample_count": 275,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.294,
+          "effective_sample_count": 182,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "multilingual_translation": {
+        "L1": {
+          "score": 0.6885,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.5827,
+          "effective_sample_count": 64,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.4845,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "writing": {
+        "L1": {
+          "score": 0.471,
+          "effective_sample_count": 3289,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6734,
+          "effective_sample_count": 3310,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3631,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "tool_use": {
+        "L1": {
+          "score": 0.3,
+          "effective_sample_count": 9,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.2894,
+          "effective_sample_count": 94,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3579,
+          "effective_sample_count": 109,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "safety": {
+        "L1": {
+          "score": 0.5072,
+          "effective_sample_count": 53,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.4285,
+          "effective_sample_count": 498,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3468,
+          "effective_sample_count": 578,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      }
+    },
+    "specialty_tags": [
+      "instruction_following_strong",
+      "knowledge_qa_strong",
+      "reasoning_strong",
+      "coding_strong",
+      "long_context_strong",
+      "data_analysis_strong",
+      "writing_strong",
+      "safety_strong"
+    ],
+    "service_attributes": {
+      "cost": {
+        "input_price": 0.9383,
+        "output_price": 2.1497,
+        "cache_read_price": 0.0,
+        "cache_write_price": 0.0
+      },
+      "latency": {
+        "avg_first_token_latency_ms": 1000,
+        "avg_output_tokens_per_second": 50,
+        "p95_latency_ms": 10000
+      },
+      "context_window": 131072,
+      "tool_supported": true,
+      "multimodal_supported": [],
+      "sensitive_data_allowed": true,
+      "available": true
+    }
+  },
+  "deepseek-v3-0324": {
+    "model_id": "deepseek-v3-0324",
+    "capability_scores": {
+      "instruction_following": {
+        "L1": {
+          "score": 0.7763,
+          "effective_sample_count": 881,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.5885,
+          "effective_sample_count": 3312,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2162,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "knowledge_qa": {
+        "L1": {
+          "score": 0.3352,
+          "effective_sample_count": 3101,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.4874,
+          "effective_sample_count": 3129,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.1475,
+          "effective_sample_count": 2075,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "reasoning": {
+        "L1": {
+          "score": 0.5654,
+          "effective_sample_count": 3301,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.5975,
+          "effective_sample_count": 3326,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.1799,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "coding": {
+        "L1": {
+          "score": 0.9457,
+          "effective_sample_count": 48,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.7972,
+          "effective_sample_count": 445,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3904,
+          "effective_sample_count": 835,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "long_context": {
+        "L1": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "L2": {
+          "score": 0.4464,
+          "effective_sample_count": 350,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2499,
+          "effective_sample_count": 1188,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "data_analysis": {
+        "L1": {
+          "score": 0.76,
+          "effective_sample_count": 22,
+          "confidence": "medium"
+        },
+        "L2": {
+          "score": 0.5232,
+          "effective_sample_count": 275,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.1822,
+          "effective_sample_count": 182,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "multilingual_translation": {
+        "L1": {
+          "score": 0.5016,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.4855,
+          "effective_sample_count": 64,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.4123,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "writing": {
+        "L1": {
+          "score": 0.4319,
+          "effective_sample_count": 3289,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.5717,
+          "effective_sample_count": 3310,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2185,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "tool_use": {
+        "L1": {
+          "score": 0.3,
+          "effective_sample_count": 9,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.137,
+          "effective_sample_count": 94,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.0428,
+          "effective_sample_count": 109,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "safety": {
+        "L1": {
+          "score": 0.4638,
+          "effective_sample_count": 53,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.2923,
+          "effective_sample_count": 498,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2205,
+          "effective_sample_count": 578,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      }
+    },
+    "specialty_tags": [],
+    "service_attributes": {
+      "cost": {
+        "input_price": 0.5671,
+        "output_price": 0.8806,
+        "cache_read_price": 0.0,
+        "cache_write_price": 0.0
+      },
+      "latency": {
+        "avg_first_token_latency_ms": 1000,
+        "avg_output_tokens_per_second": 50,
+        "p95_latency_ms": 10000
+      },
+      "context_window": 131072,
+      "tool_supported": true,
+      "multimodal_supported": [],
+      "sensitive_data_allowed": true,
+      "available": true
+    }
+  },
+  "deepseek-v3.1-terminus": {
+    "model_id": "deepseek-v3.1-terminus",
+    "capability_scores": {
+      "instruction_following": {
+        "L1": {
+          "score": 0.8179,
+          "effective_sample_count": 881,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6629,
+          "effective_sample_count": 3312,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2927,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "knowledge_qa": {
+        "L1": {
+          "score": 0.3023,
+          "effective_sample_count": 3101,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.5167,
+          "effective_sample_count": 3129,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2099,
+          "effective_sample_count": 2075,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "reasoning": {
+        "L1": {
+          "score": 0.5738,
+          "effective_sample_count": 3301,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.672,
+          "effective_sample_count": 3326,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2322,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "coding": {
+        "L1": {
+          "score": 0.9239,
+          "effective_sample_count": 48,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.783,
+          "effective_sample_count": 445,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3925,
+          "effective_sample_count": 835,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "long_context": {
+        "L1": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "L2": {
+          "score": 0.505,
+          "effective_sample_count": 350,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3057,
+          "effective_sample_count": 1188,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "data_analysis": {
+        "L1": {
+          "score": 0.72,
+          "effective_sample_count": 22,
+          "confidence": "medium"
+        },
+        "L2": {
+          "score": 0.593,
+          "effective_sample_count": 275,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2442,
+          "effective_sample_count": 182,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "multilingual_translation": {
+        "L1": {
+          "score": 0.782,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.5356,
+          "effective_sample_count": 64,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.7654,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "writing": {
+        "L1": {
+          "score": 0.4452,
+          "effective_sample_count": 3289,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6543,
+          "effective_sample_count": 3310,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2824,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "tool_use": {
+        "L1": {
+          "score": 0.2,
+          "effective_sample_count": 9,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.3893,
+          "effective_sample_count": 94,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.4118,
+          "effective_sample_count": 109,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "safety": {
+        "L1": {
+          "score": 0.442,
+          "effective_sample_count": 53,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.4942,
+          "effective_sample_count": 498,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2905,
+          "effective_sample_count": 578,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      }
+    },
+    "specialty_tags": [
+      "multilingual_translation_strong"
+    ],
+    "service_attributes": {
+      "cost": {
+        "input_price": 0.4483,
+        "output_price": 0.9195,
+        "cache_read_price": 0.0,
+        "cache_write_price": 0.0
+      },
+      "latency": {
+        "avg_first_token_latency_ms": 1000,
+        "avg_output_tokens_per_second": 50,
+        "p95_latency_ms": 10000
+      },
+      "context_window": 131072,
+      "tool_supported": true,
+      "multimodal_supported": [],
+      "sensitive_data_allowed": true,
+      "available": true
+    }
+  },
+  "gemini-2.5-flash": {
+    "model_id": "gemini-2.5-flash",
+    "capability_scores": {
+      "instruction_following": {
+        "L1": {
+          "score": 0.7843,
+          "effective_sample_count": 881,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6296,
+          "effective_sample_count": 3312,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.227,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "knowledge_qa": {
+        "L1": {
+          "score": 0.3541,
+          "effective_sample_count": 3101,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.4995,
+          "effective_sample_count": 3129,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.173,
+          "effective_sample_count": 2075,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "reasoning": {
+        "L1": {
+          "score": 0.5767,
+          "effective_sample_count": 3301,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6423,
+          "effective_sample_count": 3326,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2018,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "coding": {
+        "L1": {
+          "score": 0.9331,
+          "effective_sample_count": 48,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.7667,
+          "effective_sample_count": 445,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2914,
+          "effective_sample_count": 835,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "long_context": {
+        "L1": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "L2": {
+          "score": 0.4529,
+          "effective_sample_count": 350,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2231,
+          "effective_sample_count": 1188,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "data_analysis": {
+        "L1": {
+          "score": 0.76,
+          "effective_sample_count": 22,
+          "confidence": "medium"
+        },
+        "L2": {
+          "score": 0.5232,
+          "effective_sample_count": 275,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2204,
+          "effective_sample_count": 182,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "multilingual_translation": {
+        "L1": {
+          "score": 0.5918,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.4073,
+          "effective_sample_count": 64,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.5938,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "writing": {
+        "L1": {
+          "score": 0.4511,
+          "effective_sample_count": 3289,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.5962,
+          "effective_sample_count": 3310,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2306,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "tool_use": {
+        "L1": {
+          "score": 0.2,
+          "effective_sample_count": 9,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.3682,
+          "effective_sample_count": 94,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2227,
+          "effective_sample_count": 109,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "safety": {
+        "L1": {
+          "score": 0.4493,
+          "effective_sample_count": 53,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.448,
+          "effective_sample_count": 498,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2122,
+          "effective_sample_count": 578,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      }
+    },
+    "specialty_tags": [],
+    "service_attributes": {
+      "cost": {
+        "input_price": 0.3052,
+        "output_price": 2.4791,
+        "cache_read_price": 0.0,
+        "cache_write_price": 0.0
+      },
+      "latency": {
+        "avg_first_token_latency_ms": 1000,
+        "avg_output_tokens_per_second": 50,
+        "p95_latency_ms": 10000
+      },
+      "context_window": 1048576,
+      "tool_supported": true,
+      "multimodal_supported": [
+        "vision",
+        "audio",
+        "video"
+      ],
+      "sensitive_data_allowed": true,
+      "available": true
+    }
+  },
+  "gemini-2.5-pro": {
+    "model_id": "gemini-2.5-pro",
+    "capability_scores": {
+      "instruction_following": {
+        "L1": {
+          "score": 0.8227,
+          "effective_sample_count": 881,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.707,
+          "effective_sample_count": 3312,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.4115,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "knowledge_qa": {
+        "L1": {
+          "score": 0.5748,
+          "effective_sample_count": 3101,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6107,
+          "effective_sample_count": 3129,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3367,
+          "effective_sample_count": 2075,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "reasoning": {
+        "L1": {
+          "score": 0.7073,
+          "effective_sample_count": 3301,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.7184,
+          "effective_sample_count": 3326,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3835,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "coding": {
+        "L1": {
+          "score": 0.9473,
+          "effective_sample_count": 48,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.8971,
+          "effective_sample_count": 445,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.5174,
+          "effective_sample_count": 835,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "long_context": {
+        "L1": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "L2": {
+          "score": 0.6062,
+          "effective_sample_count": 350,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.399,
+          "effective_sample_count": 1188,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "data_analysis": {
+        "L1": {
+          "score": 0.76,
+          "effective_sample_count": 22,
+          "confidence": "medium"
+        },
+        "L2": {
+          "score": 0.6758,
+          "effective_sample_count": 275,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3295,
+          "effective_sample_count": 182,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "multilingual_translation": {
+        "L1": {
+          "score": 0.6557,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.6209,
+          "effective_sample_count": 64,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.7549,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "writing": {
+        "L1": {
+          "score": 0.6335,
+          "effective_sample_count": 3289,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.7105,
+          "effective_sample_count": 3310,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.4103,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "tool_use": {
+        "L1": {
+          "score": 0.1,
+          "effective_sample_count": 9,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.3913,
+          "effective_sample_count": 94,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3839,
+          "effective_sample_count": 109,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "safety": {
+        "L1": {
+          "score": 0.6449,
+          "effective_sample_count": 53,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.5426,
+          "effective_sample_count": 498,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3992,
+          "effective_sample_count": 578,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      }
+    },
+    "specialty_tags": [
+      "instruction_following_strong",
+      "knowledge_qa_strong",
+      "reasoning_strong",
+      "coding_strong",
+      "long_context_strong",
+      "data_analysis_strong",
+      "multilingual_translation_strong",
+      "writing_strong",
+      "safety_strong"
+    ],
+    "service_attributes": {
+      "cost": {
+        "input_price": 0.5088,
+        "output_price": 10.1383,
+        "cache_read_price": 0.0,
+        "cache_write_price": 0.0
+      },
+      "latency": {
+        "avg_first_token_latency_ms": 1000,
+        "avg_output_tokens_per_second": 50,
+        "p95_latency_ms": 10000
+      },
+      "context_window": 1048576,
+      "tool_supported": true,
+      "multimodal_supported": [
+        "vision",
+        "audio",
+        "video"
+      ],
+      "sensitive_data_allowed": true,
+      "available": true
+    }
+  },
+  "glm-4.6": {
+    "model_id": "glm-4.6",
+    "capability_scores": {
+      "instruction_following": {
+        "L1": {
+          "score": 0.795,
+          "effective_sample_count": 881,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6414,
+          "effective_sample_count": 3312,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3244,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "knowledge_qa": {
+        "L1": {
+          "score": 0.318,
+          "effective_sample_count": 3101,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.4936,
+          "effective_sample_count": 3129,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2469,
+          "effective_sample_count": 2075,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "reasoning": {
+        "L1": {
+          "score": 0.5657,
+          "effective_sample_count": 3301,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6469,
+          "effective_sample_count": 3326,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2861,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "coding": {
+        "L1": {
+          "score": 0.8821,
+          "effective_sample_count": 48,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.824,
+          "effective_sample_count": 445,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3475,
+          "effective_sample_count": 835,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "long_context": {
+        "L1": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "L2": {
+          "score": 0.5433,
+          "effective_sample_count": 350,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.305,
+          "effective_sample_count": 1188,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "data_analysis": {
+        "L1": {
+          "score": 0.68,
+          "effective_sample_count": 22,
+          "confidence": "medium"
+        },
+        "L2": {
+          "score": 0.5198,
+          "effective_sample_count": 275,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2411,
+          "effective_sample_count": 182,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "multilingual_translation": {
+        "L1": {
+          "score": 0.5295,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.4992,
+          "effective_sample_count": 64,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.5216,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "writing": {
+        "L1": {
+          "score": 0.4386,
+          "effective_sample_count": 3289,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6316,
+          "effective_sample_count": 3310,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.316,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "tool_use": {
+        "L1": {
+          "score": 0.2,
+          "effective_sample_count": 9,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.3576,
+          "effective_sample_count": 94,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.5736,
+          "effective_sample_count": 109,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "safety": {
+        "L1": {
+          "score": 0.4275,
+          "effective_sample_count": 53,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.4934,
+          "effective_sample_count": 498,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3025,
+          "effective_sample_count": 578,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      }
+    },
+    "specialty_tags": [
+      "instruction_following_strong",
+      "knowledge_qa_strong",
+      "reasoning_strong",
+      "writing_strong",
+      "tool_use_strong"
+    ],
+    "service_attributes": {
+      "cost": {
+        "input_price": 0.6228,
+        "output_price": 2.1991,
+        "cache_read_price": 0.0,
+        "cache_write_price": 0.0
+      },
+      "latency": {
+        "avg_first_token_latency_ms": 1000,
+        "avg_output_tokens_per_second": 50,
+        "p95_latency_ms": 10000
+      },
+      "context_window": 200000,
+      "tool_supported": true,
+      "multimodal_supported": [],
+      "sensitive_data_allowed": true,
+      "available": true
+    }
+  },
+  "gpt-5": {
+    "model_id": "gpt-5",
+    "capability_scores": {
+      "instruction_following": {
+        "L1": {
+          "score": 0.8571,
+          "effective_sample_count": 881,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.7174,
+          "effective_sample_count": 3311,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.4702,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "knowledge_qa": {
+        "L1": {
+          "score": 0.5242,
+          "effective_sample_count": 3101,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6058,
+          "effective_sample_count": 3128,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3786,
+          "effective_sample_count": 2075,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "reasoning": {
+        "L1": {
+          "score": 0.7025,
+          "effective_sample_count": 3301,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.729,
+          "effective_sample_count": 3325,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.4372,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "coding": {
+        "L1": {
+          "score": 0.9381,
+          "effective_sample_count": 48,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.8826,
+          "effective_sample_count": 445,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.5032,
+          "effective_sample_count": 835,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "long_context": {
+        "L1": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "L2": {
+          "score": 0.6282,
+          "effective_sample_count": 349,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3972,
+          "effective_sample_count": 1188,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "data_analysis": {
+        "L1": {
+          "score": 0.92,
+          "effective_sample_count": 22,
+          "confidence": "medium"
+        },
+        "L2": {
+          "score": 0.6481,
+          "effective_sample_count": 275,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3572,
+          "effective_sample_count": 182,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "multilingual_translation": {
+        "L1": {
+          "score": 0.5,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.6415,
+          "effective_sample_count": 64,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.338,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "writing": {
+        "L1": {
+          "score": 0.6031,
+          "effective_sample_count": 3289,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.695,
+          "effective_sample_count": 3309,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.46,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "tool_use": {
+        "L1": {
+          "score": 0.2,
+          "effective_sample_count": 9,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.4746,
+          "effective_sample_count": 94,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.778,
+          "effective_sample_count": 109,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "safety": {
+        "L1": {
+          "score": 0.6522,
+          "effective_sample_count": 53,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.592,
+          "effective_sample_count": 497,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.4832,
+          "effective_sample_count": 578,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      }
+    },
+    "specialty_tags": [
+      "instruction_following_strong",
+      "knowledge_qa_strong",
+      "reasoning_strong",
+      "coding_strong",
+      "long_context_strong",
+      "data_analysis_strong",
+      "writing_strong",
+      "tool_use_strong",
+      "safety_strong"
+    ],
+    "service_attributes": {
+      "cost": {
+        "input_price": 1.0389,
+        "output_price": 10.0464,
+        "cache_read_price": 0.0,
+        "cache_write_price": 0.0
+      },
+      "latency": {
+        "avg_first_token_latency_ms": 1000,
+        "avg_output_tokens_per_second": 50,
+        "p95_latency_ms": 10000
+      },
+      "context_window": 400000,
+      "tool_supported": true,
+      "multimodal_supported": [
+        "vision"
+      ],
+      "sensitive_data_allowed": true,
+      "available": true
+    }
+  },
+  "gpt-5-chat": {
+    "model_id": "gpt-5-chat",
+    "capability_scores": {
+      "instruction_following": {
+        "L1": {
+          "score": 0.8029,
+          "effective_sample_count": 879,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6427,
+          "effective_sample_count": 3229,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2212,
+          "effective_sample_count": 1973,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "knowledge_qa": {
+        "L1": {
+          "score": 0.4642,
+          "effective_sample_count": 3101,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.5193,
+          "effective_sample_count": 3054,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.1683,
+          "effective_sample_count": 1966,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "reasoning": {
+        "L1": {
+          "score": 0.6537,
+          "effective_sample_count": 3299,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.651,
+          "effective_sample_count": 3243,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.1864,
+          "effective_sample_count": 1973,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "coding": {
+        "L1": {
+          "score": 0.9473,
+          "effective_sample_count": 48,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.8063,
+          "effective_sample_count": 445,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2993,
+          "effective_sample_count": 835,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "long_context": {
+        "L1": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "L2": {
+          "score": 0.487,
+          "effective_sample_count": 329,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2087,
+          "effective_sample_count": 1081,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "data_analysis": {
+        "L1": {
+          "score": 0.84,
+          "effective_sample_count": 22,
+          "confidence": "medium"
+        },
+        "L2": {
+          "score": 0.624,
+          "effective_sample_count": 272,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2242,
+          "effective_sample_count": 173,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "multilingual_translation": {
+        "L1": {
+          "score": 0.2213,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.5214,
+          "effective_sample_count": 64,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.5624,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "writing": {
+        "L1": {
+          "score": 0.5194,
+          "effective_sample_count": 3287,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6226,
+          "effective_sample_count": 3227,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2339,
+          "effective_sample_count": 1973,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "tool_use": {
+        "L1": {
+          "score": 0.3,
+          "effective_sample_count": 9,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.1572,
+          "effective_sample_count": 69,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.5,
+          "effective_sample_count": 4,
+          "confidence": "low"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "safety": {
+        "L1": {
+          "score": 0.3333,
+          "effective_sample_count": 53,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.5154,
+          "effective_sample_count": 433,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2584,
+          "effective_sample_count": 504,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      }
+    },
+    "specialty_tags": [
+      "tool_use_strong"
+    ],
+    "service_attributes": {
+      "cost": {
+        "input_price": 1.2624,
+        "output_price": 9.1005,
+        "cache_read_price": 0.0,
+        "cache_write_price": 0.0
+      },
+      "latency": {
+        "avg_first_token_latency_ms": 1000,
+        "avg_output_tokens_per_second": 50,
+        "p95_latency_ms": 10000
+      },
+      "context_window": 128000,
+      "tool_supported": true,
+      "multimodal_supported": [
+        "vision"
+      ],
+      "sensitive_data_allowed": true,
+      "available": true
+    }
+  },
+  "intern-s1": {
+    "model_id": "intern-s1",
+    "capability_scores": {
+      "instruction_following": {
+        "L1": {
+          "score": 0.7718,
+          "effective_sample_count": 881,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6248,
+          "effective_sample_count": 3312,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2012,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "knowledge_qa": {
+        "L1": {
+          "score": 0.2131,
+          "effective_sample_count": 3101,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.4857,
+          "effective_sample_count": 3129,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.1661,
+          "effective_sample_count": 2075,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "reasoning": {
+        "L1": {
+          "score": 0.5131,
+          "effective_sample_count": 3301,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6384,
+          "effective_sample_count": 3326,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.1719,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "coding": {
+        "L1": {
+          "score": 0.9457,
+          "effective_sample_count": 48,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6989,
+          "effective_sample_count": 445,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2041,
+          "effective_sample_count": 835,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "long_context": {
+        "L1": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "L2": {
+          "score": 0.4593,
+          "effective_sample_count": 350,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.1767,
+          "effective_sample_count": 1188,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "data_analysis": {
+        "L1": {
+          "score": 0.56,
+          "effective_sample_count": 22,
+          "confidence": "medium"
+        },
+        "L2": {
+          "score": 0.5947,
+          "effective_sample_count": 275,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2465,
+          "effective_sample_count": 182,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "multilingual_translation": {
+        "L1": {
+          "score": 0.3115,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.5848,
+          "effective_sample_count": 64,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.7104,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "writing": {
+        "L1": {
+          "score": 0.3564,
+          "effective_sample_count": 3289,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6009,
+          "effective_sample_count": 3310,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2166,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "tool_use": {
+        "L1": {
+          "score": 0.1,
+          "effective_sample_count": 9,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.1832,
+          "effective_sample_count": 94,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2547,
+          "effective_sample_count": 109,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "safety": {
+        "L1": {
+          "score": 0.3768,
+          "effective_sample_count": 53,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.4525,
+          "effective_sample_count": 498,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2254,
+          "effective_sample_count": 578,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      }
+    },
+    "specialty_tags": [
+      "multilingual_translation_strong"
+    ],
+    "service_attributes": {
+      "cost": {
+        "input_price": 0.2059,
+        "output_price": 0.5497,
+        "cache_read_price": 0.0,
+        "cache_write_price": 0.0
+      },
+      "latency": {
+        "avg_first_token_latency_ms": 1000,
+        "avg_output_tokens_per_second": 50,
+        "p95_latency_ms": 10000
+      },
+      "context_window": 131072,
+      "tool_supported": true,
+      "multimodal_supported": [
+        "vision"
+      ],
+      "sensitive_data_allowed": true,
+      "available": true
+    }
+  },
+  "kimi-k2-0905": {
+    "model_id": "kimi-k2-0905",
+    "capability_scores": {
+      "instruction_following": {
+        "L1": {
+          "score": 0.8068,
+          "effective_sample_count": 881,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6349,
+          "effective_sample_count": 3312,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2951,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "knowledge_qa": {
+        "L1": {
+          "score": 0.3356,
+          "effective_sample_count": 3101,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.5181,
+          "effective_sample_count": 3129,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.1916,
+          "effective_sample_count": 2075,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "reasoning": {
+        "L1": {
+          "score": 0.5812,
+          "effective_sample_count": 3301,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6394,
+          "effective_sample_count": 3326,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2185,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "coding": {
+        "L1": {
+          "score": 0.9348,
+          "effective_sample_count": 48,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.8138,
+          "effective_sample_count": 445,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.4023,
+          "effective_sample_count": 835,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "long_context": {
+        "L1": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "L2": {
+          "score": 0.4597,
+          "effective_sample_count": 350,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3193,
+          "effective_sample_count": 1188,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "data_analysis": {
+        "L1": {
+          "score": 0.68,
+          "effective_sample_count": 22,
+          "confidence": "medium"
+        },
+        "L2": {
+          "score": 0.5749,
+          "effective_sample_count": 275,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.227,
+          "effective_sample_count": 182,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "multilingual_translation": {
+        "L1": {
+          "score": 0.5016,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.4734,
+          "effective_sample_count": 64,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.4065,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "writing": {
+        "L1": {
+          "score": 0.4638,
+          "effective_sample_count": 3289,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6179,
+          "effective_sample_count": 3310,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2701,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "tool_use": {
+        "L1": {
+          "score": 0.3,
+          "effective_sample_count": 9,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.3099,
+          "effective_sample_count": 94,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.5374,
+          "effective_sample_count": 109,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "safety": {
+        "L1": {
+          "score": 0.5072,
+          "effective_sample_count": 53,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.4409,
+          "effective_sample_count": 498,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3333,
+          "effective_sample_count": 578,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      }
+    },
+    "specialty_tags": [
+      "tool_use_strong",
+      "safety_strong"
+    ],
+    "service_attributes": {
+      "cost": {
+        "input_price": 0.5926,
+        "output_price": 2.0017,
+        "cache_read_price": 0.0,
+        "cache_write_price": 0.0
+      },
+      "latency": {
+        "avg_first_token_latency_ms": 1000,
+        "avg_output_tokens_per_second": 50,
+        "p95_latency_ms": 10000
+      },
+      "context_window": 262144,
+      "tool_supported": true,
+      "multimodal_supported": [],
+      "sensitive_data_allowed": true,
+      "available": true
+    }
+  },
+  "qwen3-235b-a22b-2507": {
+    "model_id": "qwen3-235b-a22b-2507",
+    "capability_scores": {
+      "instruction_following": {
+        "L1": {
+          "score": 0.8211,
+          "effective_sample_count": 881,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6649,
+          "effective_sample_count": 3312,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2556,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "knowledge_qa": {
+        "L1": {
+          "score": 0.5805,
+          "effective_sample_count": 3101,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.5561,
+          "effective_sample_count": 3129,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.1909,
+          "effective_sample_count": 2075,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "reasoning": {
+        "L1": {
+          "score": 0.714,
+          "effective_sample_count": 3301,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6779,
+          "effective_sample_count": 3326,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2208,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "coding": {
+        "L1": {
+          "score": 0.9574,
+          "effective_sample_count": 48,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.8238,
+          "effective_sample_count": 445,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3257,
+          "effective_sample_count": 835,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "long_context": {
+        "L1": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "L2": {
+          "score": 0.558,
+          "effective_sample_count": 350,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2483,
+          "effective_sample_count": 1188,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "data_analysis": {
+        "L1": {
+          "score": 0.56,
+          "effective_sample_count": 22,
+          "confidence": "medium"
+        },
+        "L2": {
+          "score": 0.6137,
+          "effective_sample_count": 275,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2522,
+          "effective_sample_count": 182,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "multilingual_translation": {
+        "L1": {
+          "score": 0.7803,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.5465,
+          "effective_sample_count": 64,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.6827,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "writing": {
+        "L1": {
+          "score": 0.643,
+          "effective_sample_count": 3289,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6761,
+          "effective_sample_count": 3310,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2675,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "tool_use": {
+        "L1": {
+          "score": 0.2,
+          "effective_sample_count": 9,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.4267,
+          "effective_sample_count": 94,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3052,
+          "effective_sample_count": 109,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "safety": {
+        "L1": {
+          "score": 0.6014,
+          "effective_sample_count": 53,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.5287,
+          "effective_sample_count": 498,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2715,
+          "effective_sample_count": 578,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      }
+    },
+    "specialty_tags": [
+      "data_analysis_strong"
+    ],
+    "service_attributes": {
+      "cost": {
+        "input_price": 0.285,
+        "output_price": 0.6415,
+        "cache_read_price": 0.0,
+        "cache_write_price": 0.0
+      },
+      "latency": {
+        "avg_first_token_latency_ms": 1000,
+        "avg_output_tokens_per_second": 50,
+        "p95_latency_ms": 10000
+      },
+      "context_window": 262144,
+      "tool_supported": true,
+      "multimodal_supported": [],
+      "sensitive_data_allowed": true,
+      "available": true
+    }
+  },
+  "qwen3-235b-a22b-thinking-2507": {
+    "model_id": "qwen3-235b-a22b-thinking-2507",
+    "capability_scores": {
+      "instruction_following": {
+        "L1": {
+          "score": 0.8118,
+          "effective_sample_count": 881,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6606,
+          "effective_sample_count": 3312,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3105,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "knowledge_qa": {
+        "L1": {
+          "score": 0.5231,
+          "effective_sample_count": 3101,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.5543,
+          "effective_sample_count": 3129,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.1924,
+          "effective_sample_count": 2075,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "reasoning": {
+        "L1": {
+          "score": 0.682,
+          "effective_sample_count": 3301,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6567,
+          "effective_sample_count": 3326,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2383,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "coding": {
+        "L1": {
+          "score": 0.9356,
+          "effective_sample_count": 48,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.8634,
+          "effective_sample_count": 445,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.4514,
+          "effective_sample_count": 835,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "long_context": {
+        "L1": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "L2": {
+          "score": 0.5586,
+          "effective_sample_count": 350,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3306,
+          "effective_sample_count": 1188,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "data_analysis": {
+        "L1": {
+          "score": 0.76,
+          "effective_sample_count": 22,
+          "confidence": "medium"
+        },
+        "L2": {
+          "score": 0.5725,
+          "effective_sample_count": 275,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.1876,
+          "effective_sample_count": 182,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "weak"
+      },
+      "multilingual_translation": {
+        "L1": {
+          "score": 0.4082,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.5052,
+          "effective_sample_count": 64,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.8821,
+          "effective_sample_count": 7,
+          "confidence": "low"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "strong"
+      },
+      "writing": {
+        "L1": {
+          "score": 0.5899,
+          "effective_sample_count": 3289,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.6758,
+          "effective_sample_count": 3310,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.2924,
+          "effective_sample_count": 2082,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "tool_use": {
+        "L1": {
+          "score": 0.2,
+          "effective_sample_count": 9,
+          "confidence": "low"
+        },
+        "L2": {
+          "score": 0.4073,
+          "effective_sample_count": 94,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.4743,
+          "effective_sample_count": 109,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      },
+      "safety": {
+        "L1": {
+          "score": 0.5652,
+          "effective_sample_count": 53,
+          "confidence": "high"
+        },
+        "L2": {
+          "score": 0.5716,
+          "effective_sample_count": 498,
+          "confidence": "high"
+        },
+        "L3": {
+          "score": 0.3259,
+          "effective_sample_count": 578,
+          "confidence": "high"
+        },
+        "L4": {
+          "score": null,
+          "effective_sample_count": 0,
+          "confidence": "none"
+        },
+        "tier": "standard"
+      }
+    },
+    "specialty_tags": [
+      "coding_strong",
+      "long_context_strong",
+      "multilingual_translation_strong"
+    ],
+    "service_attributes": {
+      "cost": {
+        "input_price": 0.5666,
+        "output_price": 1.756,
+        "cache_read_price": 0.0,
+        "cache_write_price": 0.0
+      },
+      "latency": {
+        "avg_first_token_latency_ms": 1000,
+        "avg_output_tokens_per_second": 50,
+        "p95_latency_ms": 10000
+      },
+      "context_window": 262144,
+      "tool_supported": true,
+      "multimodal_supported": [],
+      "sensitive_data_allowed": true,
+      "available": true
+    }
+  }
+}

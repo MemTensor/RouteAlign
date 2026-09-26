@@ -1,0 +1,505 @@
+{
+  "config": {
+    "method": "learned_fusion_ridge",
+    "features": [
+      "q_dd",
+      "q_judge",
+      "granular",
+      "knn",
+      "dataset",
+      "knn*disc",
+      "knn_margin",
+      "is_argmax_knn",
+      "knn_g_gap",
+      "knn_cap"
+    ],
+    "fusion_weights": [
+      -0.00648281366542481,
+      -0.004389415817020976,
+      0.8754217817262642,
+      -0.8267947483686148,
+      -0.2700026923554665,
+      0.031076319693245993,
+      -0.009514173166082121,
+      -0.0010215773030347076,
+      -0.14129961637824973,
+      1.2908968851739928
+    ],
+    "per_difficulty": false,
+    "ridge_alpha": 1.0,
+    "cost_lambda": 0.4,
+    "knn_k": 150,
+    "knn_beta": 5.0,
+    "model_profiles": "/mnt/afs/chending_zjh/LLMRouterBench/baselines/DemoRouter3_train/data/router_21K_Qwen3-0.6B_learned_fusion/model_profiles_data_driven.json",
+    "train_path": "/mnt/afs/chending_zjh/LLMRouterBench/baselines/DemoRouter3_train/data/router_21K_Qwen3-0.6B_learned_fusion/train.jsonl"
+  },
+  "results": {
+    "accuracy": 68.64,
+    "all_sample_avg": 63.07,
+    "correct_routes": 2357.5,
+    "total_queries": 3738,
+    "dataset_performance": {
+      "aime": {
+        "correct": 15.0,
+        "total": 18,
+        "accuracy": 83.33,
+        "cost": 1.4391
+      },
+      "arenahard": {
+        "correct": 176.5,
+        "total": 226,
+        "accuracy": 78.1,
+        "cost": 6.6664
+      },
+      "gpqa": {
+        "correct": 49.0,
+        "total": 60,
+        "accuracy": 81.67,
+        "cost": 2.0629
+      },
+      "hle": {
+        "correct": 169.0,
+        "total": 648,
+        "accuracy": 26.08,
+        "cost": 39.3361
+      },
+      "livecodebench": {
+        "correct": 265.0,
+        "total": 317,
+        "accuracy": 83.6,
+        "cost": 17.955
+      },
+      "livemathbench": {
+        "correct": 30.0,
+        "total": 37,
+        "accuracy": 81.08,
+        "cost": 1.2114
+      },
+      "mmlupro": {
+        "correct": 782.0,
+        "total": 900,
+        "accuracy": 86.89,
+        "cost": 9.3397
+      },
+      "simpleqa": {
+        "correct": 759.0,
+        "total": 1298,
+        "accuracy": 58.47,
+        "cost": 5.1667
+      },
+      "swe-bench": {
+        "correct": 50.0,
+        "total": 150,
+        "accuracy": 33.33,
+        "cost": 10.8183
+      },
+      "tau2": {
+        "correct": 62.0,
+        "total": 84,
+        "accuracy": 73.81,
+        "cost": 16.4242
+      }
+    },
+    "cost_analysis": {
+      "total_cost": 110.4199,
+      "avg_cost_per_query": 0.02954,
+      "model_costs": {
+        "claude-sonnet-4": 10.6705,
+        "deepseek-r1-0528": 3.0336,
+        "deepseek-v3-0324": 0.0304,
+        "deepseek-v3.1-terminus": 0.0844,
+        "gemini-2.5-flash": 0.0004,
+        "gemini-2.5-pro": 10.1554,
+        "glm-4.6": 0.1193,
+        "gpt-5": 84.4285,
+        "gpt-5-chat": 0.0057,
+        "intern-s1": 0.0021,
+        "kimi-k2-0905": 0.0036,
+        "qwen3-235b-a22b-2507": 0.047,
+        "qwen3-235b-a22b-thinking-2507": 1.8391
+      }
+    },
+    "model_selection_counts": {
+      "claude-sonnet-4": 137,
+      "deepseek-r1-0528": 181,
+      "deepseek-v3-0324": 12,
+      "deepseek-v3.1-terminus": 37,
+      "gemini-2.5-flash": 2,
+      "gemini-2.5-pro": 600,
+      "glm-4.6": 14,
+      "gpt-5": 1852,
+      "gpt-5-chat": 1,
+      "intern-s1": 2,
+      "kimi-k2-0905": 4,
+      "qwen3-235b-a22b-2507": 807,
+      "qwen3-235b-a22b-thinking-2507": 89
+    },
+    "difficulty_distribution": {
+      "L1": 1440,
+      "L2": 1394,
+      "L3": 904
+    },
+    "matched_tier_distribution": {
+      "standard": 1394,
+      "strong": 904,
+      "weak": 1440
+    },
+    "fallback_count": 0,
+    "oracle_sample_avg": 82.56,
+    "baseline_analysis": {
+      "claude-sonnet-4": {
+        "accuracy": 38.41,
+        "cost": 70.284
+      },
+      "deepseek-r1-0528": {
+        "accuracy": 47.85,
+        "cost": 60.746
+      },
+      "deepseek-v3-0324": {
+        "accuracy": 40.41,
+        "cost": 4.7761
+      },
+      "deepseek-v3.1-terminus": {
+        "accuracy": 44.18,
+        "cost": 9.4259
+      },
+      "gemini-2.5-flash": {
+        "accuracy": 42.64,
+        "cost": 32.9742
+      },
+      "gemini-2.5-pro": {
+        "accuracy": 59.18,
+        "cost": 233.9682
+      },
+      "glm-4.6": {
+        "accuracy": 44.65,
+        "cost": 61.3873
+      },
+      "gpt-5": {
+        "accuracy": 58.37,
+        "cost": 124.8211
+      },
+      "gpt-5-chat": {
+        "accuracy": 46.89,
+        "cost": 17.9561
+      },
+      "intern-s1": {
+        "accuracy": 37.74,
+        "cost": 13.8452
+      },
+      "kimi-k2-0905": {
+        "accuracy": 45.09,
+        "cost": 14.5265
+      },
+      "qwen3-235b-a22b-2507": {
+        "accuracy": 53.81,
+        "cost": 6.9845
+      },
+      "qwen3-235b-a22b-thinking-2507": {
+        "accuracy": 53.13,
+        "cost": 36.8374
+      }
+    }
+  },
+  "routing_analysis": {
+    "total_queries": 3738,
+    "difficulty_tier_matrix": {
+      "L1": {
+        "weak": 1440,
+        "standard": 0,
+        "strong": 0,
+        "expert": 0
+      },
+      "L2": {
+        "weak": 0,
+        "standard": 1394,
+        "strong": 0,
+        "expert": 0
+      },
+      "L3": {
+        "weak": 0,
+        "standard": 0,
+        "strong": 904,
+        "expert": 0
+      },
+      "L4": {
+        "weak": 0,
+        "standard": 0,
+        "strong": 0,
+        "expert": 0
+      }
+    },
+    "target_matched_tier_matrix": {
+      "weak": {
+        "weak": 1440,
+        "standard": 0,
+        "strong": 0,
+        "expert": 0
+      },
+      "standard": {
+        "weak": 0,
+        "standard": 1394,
+        "strong": 0,
+        "expert": 0
+      },
+      "strong": {
+        "weak": 0,
+        "standard": 0,
+        "strong": 904,
+        "expert": 0
+      },
+      "expert": {
+        "weak": 0,
+        "standard": 0,
+        "strong": 0,
+        "expert": 0
+      }
+    },
+    "fallback": {
+      "total": 0,
+      "ratio": 0.0,
+      "by_target_tier": {}
+    },
+    "over_routing": {
+      "total": 0,
+      "ratio": 0.0,
+      "by_dataset": {},
+      "by_primary_capability": {},
+      "top_examples": []
+    },
+    "dataset_summary": {
+      "aime": {
+        "count": 18,
+        "difficulty_distribution": {
+          "L3": 13,
+          "L2": 5
+        },
+        "tier_distribution": {
+          "strong": 13,
+          "standard": 5
+        },
+        "over_routing_count": 0,
+        "over_routing_ratio": 0.0,
+        "avg_cost": 0.079951,
+        "accuracy": 83.33
+      },
+      "arenahard": {
+        "count": 226,
+        "difficulty_distribution": {
+          "L3": 57,
+          "L2": 140,
+          "L1": 29
+        },
+        "tier_distribution": {
+          "strong": 57,
+          "standard": 140,
+          "weak": 29
+        },
+        "over_routing_count": 0,
+        "over_routing_ratio": 0.0,
+        "avg_cost": 0.029497,
+        "accuracy": 78.1
+      },
+      "gpqa": {
+        "count": 60,
+        "difficulty_distribution": {
+          "L2": 43,
+          "L3": 17
+        },
+        "tier_distribution": {
+          "standard": 43,
+          "strong": 17
+        },
+        "over_routing_count": 0,
+        "over_routing_ratio": 0.0,
+        "avg_cost": 0.034381,
+        "accuracy": 81.67
+      },
+      "hle": {
+        "count": 648,
+        "difficulty_distribution": {
+          "L3": 421,
+          "L2": 225,
+          "L1": 2
+        },
+        "tier_distribution": {
+          "strong": 421,
+          "standard": 225,
+          "weak": 2
+        },
+        "over_routing_count": 0,
+        "over_routing_ratio": 0.0,
+        "avg_cost": 0.060704,
+        "accuracy": 26.08
+      },
+      "livecodebench": {
+        "count": 317,
+        "difficulty_distribution": {
+          "L3": 181,
+          "L2": 116,
+          "L1": 20
+        },
+        "tier_distribution": {
+          "strong": 181,
+          "standard": 116,
+          "weak": 20
+        },
+        "over_routing_count": 0,
+        "over_routing_ratio": 0.0,
+        "avg_cost": 0.05664,
+        "accuracy": 83.6
+      },
+      "livemathbench": {
+        "count": 37,
+        "difficulty_distribution": {
+          "L2": 24,
+          "L3": 5,
+          "L1": 8
+        },
+        "tier_distribution": {
+          "standard": 24,
+          "strong": 5,
+          "weak": 8
+        },
+        "over_routing_count": 0,
+        "over_routing_ratio": 0.0,
+        "avg_cost": 0.032741,
+        "accuracy": 81.08
+      },
+      "mmlupro": {
+        "count": 900,
+        "difficulty_distribution": {
+          "L2": 633,
+          "L1": 250,
+          "L3": 17
+        },
+        "tier_distribution": {
+          "standard": 633,
+          "weak": 250,
+          "strong": 17
+        },
+        "over_routing_count": 0,
+        "over_routing_ratio": 0.0,
+        "avg_cost": 0.010377,
+        "accuracy": 86.89
+      },
+      "simpleqa": {
+        "count": 1298,
+        "difficulty_distribution": {
+          "L2": 167,
+          "L1": 1131
+        },
+        "tier_distribution": {
+          "standard": 167,
+          "weak": 1131
+        },
+        "over_routing_count": 0,
+        "over_routing_ratio": 0.0,
+        "avg_cost": 0.003981,
+        "accuracy": 58.47
+      },
+      "swe-bench": {
+        "count": 150,
+        "difficulty_distribution": {
+          "L3": 142,
+          "L2": 8
+        },
+        "tier_distribution": {
+          "strong": 142,
+          "standard": 8
+        },
+        "over_routing_count": 0,
+        "over_routing_ratio": 0.0,
+        "avg_cost": 0.072122,
+        "accuracy": 33.33
+      },
+      "tau2": {
+        "count": 84,
+        "difficulty_distribution": {
+          "L2": 33,
+          "L3": 51
+        },
+        "tier_distribution": {
+          "standard": 33,
+          "strong": 51
+        },
+        "over_routing_count": 0,
+        "over_routing_ratio": 0.0,
+        "avg_cost": 0.195526,
+        "accuracy": 73.81
+      }
+    },
+    "difficulty_summary": {
+      "L1": {
+        "count": 1440,
+        "avg_cost": 0.003207,
+        "accuracy": 66.74
+      },
+      "L2": {
+        "count": 1394,
+        "avg_cost": 0.019673,
+        "accuracy": 69.87
+      },
+      "L3": {
+        "count": 904,
+        "avg_cost": 0.086702,
+        "accuracy": 46.74
+      }
+    },
+    "model_selection_by_difficulty": {
+      "claude-sonnet-4": {
+        "L2": 1,
+        "L3": 136
+      },
+      "deepseek-r1-0528": {
+        "L2": 142,
+        "L3": 24,
+        "L1": 15
+      },
+      "deepseek-v3-0324": {
+        "L1": 4,
+        "L2": 8
+      },
+      "deepseek-v3.1-terminus": {
+        "L1": 22,
+        "L2": 7,
+        "L3": 8
+      },
+      "gemini-2.5-flash": {
+        "L1": 2
+      },
+      "gemini-2.5-pro": {
+        "L2": 235,
+        "L3": 14,
+        "L1": 351
+      },
+      "glm-4.6": {
+        "L2": 8,
+        "L1": 6
+      },
+      "gpt-5": {
+        "L3": 720,
+        "L2": 881,
+        "L1": 251
+      },
+      "gpt-5-chat": {
+        "L2": 1
+      },
+      "intern-s1": {
+        "L2": 2
+      },
+      "kimi-k2-0905": {
+        "L1": 4
+      },
+      "qwen3-235b-a22b-2507": {
+        "L2": 32,
+        "L3": 2,
+        "L1": 773
+      },
+      "qwen3-235b-a22b-thinking-2507": {
+        "L2": 77,
+        "L1": 12
+      }
+    }
+  }
+}
