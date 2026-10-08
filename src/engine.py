@@ -21,7 +21,7 @@ from .task_profiler import TaskProfiler
 
 
 class RoutingEngine:
-    """Demo Router 线上引擎。"""
+    """RouteAlign 线上引擎。"""
 
     def __init__(self, config: DemoRouterConfig):
         self.config = config

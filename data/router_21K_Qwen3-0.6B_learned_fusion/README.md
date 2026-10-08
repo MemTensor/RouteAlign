@@ -1,6 +1,6 @@
-# Reproduction bundle: router_21K_Qwen3-0.6B learned fusion
+# Reproduction bundle: router_21K_Qwen3-0.6B shared scorer
 
-Self-contained inputs and expected outputs for the main RouteAlign result on
+Self-contained inputs and expected outputs for the main RouteAlign service-selection result on
 LLMRouterBench: Dataset-Avg 68.64%, Sample-Avg 63.07%, generation cost $110.42.
 
 Run from the repository root:

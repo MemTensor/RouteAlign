@@ -1,6 +1,6 @@
 """
 题库构建：调用强模型为每道抽样题目标注元数据与能力权重，
-生成符合 Demo Router 要求的完整题库（QuestionItem JSONL）。
+生成符合 RouteAlign 要求的完整题库（QuestionItem JSONL）。
 
 支持断点续跑：已标注的 item_id 会被跳过。
 
@@ -202,7 +202,7 @@ def build_question_bank(config: AdapterConfig) -> str:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Build DemoRouter question bank")
+    parser = argparse.ArgumentParser(description="Build RouteAlign question bank")
     parser.add_argument(
         "--config",
         default="config/adapter_config.yaml",

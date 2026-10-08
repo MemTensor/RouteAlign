@@ -1,5 +1,5 @@
 #!/bin/bash
-# 微调任务画像模型的 sglang 服务管理（DemoRouter3_train）
+# 微调任务画像模型的 sglang 服务管理（RouteAlign）
 #
 # 按 config/trained_models.yaml 注册表，为每个模型在指定 GPU 上启动一个
 # sglang OpenAI 兼容服务（每 GPU 一个，互不干扰）。

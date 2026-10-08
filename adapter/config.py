@@ -1,7 +1,7 @@
 """
 适配模块配置加载。
 
-适配模块有独立于 Demo Router 的配置文件（YAML），
+适配模块有独立于 RouteAlign 的配置文件（YAML），
 管理数据来源、划分参数、题库抽样规模、标注 LLM、评估参数等。
 """
 
@@ -37,7 +37,7 @@ class AdapterConfig:
     # 强模型：题库元数据与能力权重标注
     metadata_model: Dict[str, Any] = field(default_factory=dict)
 
-    # Demo Router 侧配置文件（驱动离线画像与线上路由）
+    # RouteAlign 侧配置文件（驱动离线画像与线上路由）
     demo_router_config: str = "config/demo_router_config.yaml"
 
     # 评估参数

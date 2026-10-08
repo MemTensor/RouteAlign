@@ -1,30 +1,27 @@
 """
-学习式融合路由：用岭回归在训练集上学习"期望正确率"的组合权重。
+共享质量-成本评分器：在训练集上用岭回归学习任务证据的组合权重（论文共享评分规则的实现）。
 
-针对统一打分器的缺陷 D3（手工线性融合无校准、信号可信度不随证据强度调整）：
-不再手设 α/β/κ/δ，而是对每对 (train query, model) 提取 7 个特征，
-以实测正确率为目标拟合岭回归 P̂(m|x) = w·f(m|x)，路由时按
-P̂(m|x) − λ·ĉ(m|x) 逐题选模型。全部特征与权重仅来自训练集
+对每对 (train query, model) 提取 10 个候选共享特征，以实测任务得分为目标
+拟合岭回归质量估计器 q̂(x,m) = θᵀf(x,m)；选择时在合格候选集合上按
+q̂(x,m) − λ·ĉ(x,m) 取最大。特征定义与系数对全部候选一致，模型身份仅索引
+证据而不构成学习到的输出类别。全部特征与权重仅来自训练集
 （kNN 特征在训练集上为 LOO，防自匹配泄漏），测试集只做一次性评估。
 
-特征（均为训练集可得的通用信号，无任何数据集级硬编码）：
-  f1 = Q'_dd   数据驱动能力画像分（答对归因画像，10 能力 × 难度加权）
-  f2 = Q'_jdg  打分模型画像分（gbt-5.4 多维打分画像，独立证据源）
-  f3 = g       (数据集, 难度) 细粒度期望正确率
-  f4 = knn     kNN 局部期望正确率（逐题）
-  f5 = d       数据集级期望正确率
-  f6 = knn×disc     kNN × 邻域判别度（局部先验的模型间区分度交互）
-  f7 = knn_margin   kNN 邻域边际（与"其他模型中最强者"的差距）
-  f8 = is_argmax    是否为该题 kNN 邻域先验的最优模型
-  f9 = |knn−g|      kNN 与细粒度先验的分歧度
+十个特征分四组（与论文特征定义一致）：
+  全局画像兼容：q_dd（结果画像 Q^out）、q_judge（回答评估画像 Q^judge）
+  更广条件证据：granular（类别×难度条件均值 g）、dataset（样本类别均值 b）
+  局部证据：knn（标量邻域估计 p_nn）、knn_cap（能力条件化局部兼容 Q^local，
+    knn_priors 含 cap_acc 时启用）
+  局部相对比较：knn×disc（p_nn×候选分离度）、knn_margin（对最强备选的优势）、
+    is_argmax_knn（是否邻域估计最高）、|knn−g|（与条件均值的分歧）
 
 用法：
     python -m adapter.evaluate_learned_fusion \
-        --test .../test.jsonl --routing-records .../routing_records.jsonl \
+        --test .../test.jsonl --routing-records .../test_task_profiles_cache.jsonl \
         --model-profiles .../model_profiles_data_driven.json \
-        --judge-profiles .../model_profiles.json \
+        --judge-profiles .../model_profiles_judge.json \
         --train-path .../train.jsonl --output-dir .../out \
-        --knn-k 100 --cost-lambda 0.5 [--loo]
+        --knn-k 150 --knn-beta 5.0 --knn-cap --ridge-alpha 1.0 --cost-lambda 0.4
 """
 
 import argparse

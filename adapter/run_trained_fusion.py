@@ -1,5 +1,5 @@
 """
-微调任务画像模型的「学习式融合路由」批量评估（DemoRouter3 最佳性能代码路径）。
+微调任务画像模型的「学习式融合路由」批量评估（与论文报告结果一致的共享评分配置）。
 
 对每个注册的微调模型依次执行：
 1. profiles：用该模型（sglang 服务）为训练集 8710 条 query 生成任务画像
@@ -40,7 +40,7 @@ PKG_ROOT = Path(__file__).resolve().parents[1]  # repository root
 REGISTRY_PATH = PKG_ROOT / "config" / "trained_models.yaml"
 DATA_DIR = PKG_ROOT / "data" / "seed42_split0.7"
 
-# 与 DemoRouter3 最佳结果（seed43_fusion_final）一致的融合超参
+# 论文报告配置使用的融合超参（knn-k 150, beta 5.0, ridge-alpha 1.0, cost-lambda 0.4）
 FUSION_KNN_K = 150
 FUSION_KNN_BETA = 5.0
 FUSION_COST_LAMBDA = 0.4

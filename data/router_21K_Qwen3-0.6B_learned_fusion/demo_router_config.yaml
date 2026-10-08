@@ -1,9 +1,9 @@
-# Demo Router 配置
+# RouteAlign 配置
 #
-# Demo Router 项目自身的配置：各步骤所需 LLM、画像聚合参数、路由策略、数据路径。
+# RouteAlign 项目自身的配置：各步骤所需 LLM、画像聚合参数、路由策略、数据路径。
 # api_key / base_url 支持环境变量名引用（全大写形式，如 GRADER_API_KEY 会从环境变量读取）。
 #
-# DemoRouter3_train：任务画像模型替换为本地 sglang 服务的微调模型
+# 任务画像模型为本地 sglang 服务的微调模型
 # （router_21K / grpo_router 系列，见 config/trained_models.yaml），
 # 提示词风格为 sft_v3（与训练数据 task-profile-sft-v3 逐字一致）。
 

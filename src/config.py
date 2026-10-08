@@ -1,5 +1,5 @@
 """
-Demo Router 配置加载。
+RouteAlign 配置加载。
 
 配置文件（YAML）集中管理各步骤所需的 LLM 信息与其他参数：
 打分模型、任务画像模型、画像聚合参数、路由策略、数据路径等。
@@ -17,7 +17,7 @@ from .router import RoutingPolicy
 
 @dataclass
 class DemoRouterConfig:
-    """Demo Router 全局配置。"""
+    """RouteAlign 全局配置。"""
 
     # LLM 端点
     grading_model: Dict[str, Any] = field(default_factory=dict)
@@ -52,7 +52,7 @@ class DemoRouterConfig:
     def load(cls, path: str) -> "DemoRouterConfig":
         config_path = Path(path)
         if not config_path.exists():
-            raise FileNotFoundError(f"Demo Router config not found: {path}")
+            raise FileNotFoundError(f"RouteAlign config not found: {path}")
         with open(config_path, "r", encoding="utf-8") as f:
             data = yaml.safe_load(f) or {}
         cfg = data.get("demo_router", data)

@@ -1,7 +1,7 @@
-# DemoRouter 适配模块配置（DemoRouter3_train）
+# RouteAlign 适配模块配置
 #
-# 与 DemoRouter3 的区别：数据固定为 seed42_split0.7；任务画像模型为本地
-# sglang 服务的微调模型（见 config/trained_models.yaml）；评估并发提高（本地服务无限流）。
+# 数据固定为 seed42_split0.7；任务画像模型为本地 sglang 服务的微调模型
+#（见 config/trained_models.yaml）；评估并发提高（本地服务无限流）。
 
 adapter:
   # LLMRouterBench 数据来源（复用项目根目录的 baseline 配置）
@@ -34,7 +34,7 @@ adapter:
     timeout: 1200
     max_tokens: 8192
 
-  # Demo Router 侧配置文件（离线画像与线上路由使用）
+  # RouteAlign 侧配置文件（离线画像与线上路由使用）
   demo_router_config: config/demo_router_config.yaml
 
   # 评估参数

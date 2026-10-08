@@ -1153,7 +1153,7 @@ def compare_with_baseline(
             "cost_gap": round(curr_cost - base_cost, 4),
         })
 
-    # 按准确率差距排序，找出 DemoRouter 明显落后的数据集
+    # 按准确率差距排序，找出 RouteAlign 明显落后的数据集
     dataset_gaps.sort(key=lambda x: x["accuracy_gap"])
 
     return {

@@ -211,7 +211,7 @@ def run_data_prep(config: AdapterConfig) -> Dict[str, str]:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="DemoRouter adapter data preparation")
+    parser = argparse.ArgumentParser(description="RouteAlign adapter data preparation")
     parser.add_argument(
         "--config",
         default="config/adapter_config.yaml",

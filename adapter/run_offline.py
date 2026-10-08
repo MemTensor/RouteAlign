@@ -1,8 +1,8 @@
 """
-驱动 Demo Router 离线建模：多维打分 → 模型画像与全局分档。
+驱动 RouteAlign 离线建模：多维打分 → 模型画像与全局分档。
 
 题库与回答由适配模块准备（data_prep + build_question_bank），
-打分与画像聚合完全由 Demo Router 项目完成，本脚本只负责串联。
+打分与画像聚合完全由 RouteAlign 项目完成，本脚本只负责串联。
 
 用法：
     python -m adapter.run_offline \
@@ -61,7 +61,7 @@ def run_offline(adapter_config: AdapterConfig):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Run DemoRouter offline profiling")
+    parser = argparse.ArgumentParser(description="Run RouteAlign offline profiling")
     parser.add_argument(
         "--config",
         default="config/adapter_config.yaml",

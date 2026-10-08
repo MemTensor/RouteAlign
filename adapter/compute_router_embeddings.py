@@ -23,7 +23,7 @@ from src.prompts import (
     TASK_PROFILE_SFT_V3_USER_TEMPLATE,
 )
 
-MODEL_PATH = os.environ.get("PROFILER_MODEL_PATH", "/mnt/afs/chending_zjh/models/router_21K_Qwen3-0.6B")
+MODEL_PATH = os.environ.get("PROFILER_MODEL_PATH", "models/router_21K_Qwen3-0.6B")
 DATA = os.environ.get("ROUTER_DATA_DIR", "data/seed42_split0.7")
 BATCH = 64
 MAX_LEN = 4096

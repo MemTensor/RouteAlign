@@ -1,49 +1,44 @@
 <h1 align="center">
-    RouteAlign: From Model Selection to Requirement-Aware Routing
+    RouteAlign: Aligning Task Requirements with Model Profiles for LLM Service Selection
 </h1>
 
-RouteAlign is an LLM routing framework built on requirement-profile alignment. A compact profiler represents each request as a mixture over ten capability dimensions and a difficulty level. The same requirement coordinates organize historical outcomes into difficulty-conditioned model profiles offline, and condition the aggregation of local evidence from semantically related requests online. A shared scorer compares all feasible candidates through fixed feature definitions under service constraints and a generation-cost preference, so model suitability becomes a relation between what a request demands and what a candidate has measurably delivered.
+Selecting a large language model service requires estimating how measured model performance transfers to the demands of a new task. Aggregate scores average over heterogeneous task demands, while semantic similarity alone can overlook differences in the capabilities needed for successful completion. RouteAlign makes task requirements the common basis for constructing model profiles and selecting services. A compact profiler predicts capability weights and a difficulty level for each request. Historical requirements determine how observed outcomes contribute to difficulty-conditioned model profiles and to capability-conditioned local estimates; incoming requirements determine how those measurements inform the current decision. A shared quality scorer integrates evidence across these scopes, service metadata determines eligibility, and a generation-cost preference controls selection among eligible services.
 
 ## 🎯 Who Should Pay Attention
 
-* **LLM serving engineers:** Candidate pools keep changing as providers release new versions. RouteAlign updates model evidence without refitting the scorer, and its coefficients trained on an initial seven-model pool remain valid through additions, a version replacement, a removal, and a price change.
-* **Routing researchers:** Requirement coordinates give global measurement and local retrieval a common basis. Ablations with scorer refitting quantify what each evidence channel contributes, and the feature interface makes every estimate inspectable.
-* **Benchmark practitioners:** The complete LLMRouterBench evaluation ships with cached requirement profiles, model profiles, and query embeddings. One command reproduces the reported result exactly, with no LLM endpoint involved.
-* **Cost-sensitive deployments:** A single coefficient λ exposes the quality-cost trade-off as an explicit deployment preference. The default configuration spends 11.5% less than its cost-agnostic variant while attaining higher Dataset-Avg.
+* **LLM service platform engineers:** Candidate catalogs change as models are introduced, updated, repriced, and retired. RouteAlign separates evidence maintenance from scorer fitting, so an updated catalog requires fresh candidate measurements but no new training run, and the same feature schema describes every candidate regardless of when it joined.
+* **Routing and service-selection researchers:** Requirement coordinates give global measurement and local retrieval a shared basis. The effective-weight form of local alignment makes explicit how each neighboring outcome is reweighted, and feature ablations with scorer refitting quantify the predictive contribution of every evidence group.
+* **Benchmark practitioners:** The complete LLMRouterBench evaluation ships with cached requirement profiles, model profiles, and query embeddings. One command reproduces the reported operating point exactly, without contacting any LLM endpoint.
+* **Cost-aware applications:** The coefficient λ is an explicit application-level control rather than a fitted parameter. The default configuration reduces generation expenditure by 11.5% relative to its cost-agnostic variant while attaining higher Dataset-Avg, and changing λ shifts the operating point without refitting the quality estimator.
 
 ## ✨ Core Contributions
 
-1. **Requirement-profile alignment over shared coordinates.**
-   Requests and model measurements live on the same ten capability dimensions and four difficulty levels. A fine-tuned Qwen3-0.6B profiler predicts capability weights and difficulty from request text with deterministic decoding, supervised by about 21,000 GPT-5.4-annotated requirement profiles. Because the profiler output describes task demands rather than candidate identities, request annotations and embeddings stay reusable as the pool evolves.
+1. **A requirement-aware formulation of LLM service selection.**
+   Task competence, service eligibility, and generation-cost preference are separated explicitly. Ten capability coordinates and four difficulty levels describe what successful completion requires; service metadata such as context capacity, supported modalities, and tool access determines admissibility; the coefficient λ expresses the application preference. A capability weight influences the quality comparison among eligible services, while an explicit execution requirement decides eligibility itself, so high estimated quality cannot compensate for a known violation of an execution condition.
 
-2. **Difficulty-conditioned model profiles from two channels.**
-   Outcome profiles aggregate historical task scores into capability-by-difficulty cells, weighting each observation by the requirement weights of its request, so failures count in proportion to what the task required. A second channel aggregates rubric-based response assessments on its native scale. Conditioning on difficulty preserves performance differences that an aggregate model score would average together: two models tied on easy requests separate when the same capabilities are demanded at higher difficulty.
+2. **Requirement-profile alignment as a measurement and selection mechanism.**
+   The same requirement coordinates organize evidence on both sides of the comparison. Historical capability weights distribute observed outcomes across capability-by-difficulty profile cells, and reweight neighboring outcomes within each retrieved neighborhood; incoming weights read the global profile at the predicted difficulty and recompose per-capability local estimates. A shared ridge scorer integrates both scopes of evidence with conditional priors and relative candidate comparisons through ten candidate-agnostic features, and selection maximizes estimated quality minus λ times estimated generation cost. Model identity indexes the evidence without defining a learned output class.
 
-3. **Capability-conditioned local evidence and a shared scorer.**
-   For each request, a frozen encoder retrieves 150 neighboring training queries. Their outcomes, weighted by semantic proximity and by their own requirement weights, yield per-capability local estimates that the incoming capability mixture recomposes. A ridge regression scorer combines global compatibility, local evidence, conditional priors, and relative comparisons into ten features shared across candidates, and selection maximizes estimated quality minus λ times estimated cost. Fitting takes seconds on CPU and adds no learned per-model parameters.
-
-4. **Reuse under pool changes through a fixed evidence interface.**
-   Model identity indexes evidence without defining a learned output class. Adding or replacing a candidate updates its profiles, costs, and local records while request annotations and scorer coefficients stay fixed. Across nine evaluated pool configurations, RouteAlign-Frozen attains the highest Dataset-Avg in every configuration and a mean of 64.61%, 4.41 points above the strongest baseline.
+3. **An empirical assessment from selection value to evidence maintenance.**
+   Four research questions cover selection quality and generation expenditure, the contribution of each evidence group, execution overhead with and without requirement prediction, and scorer reuse under controlled catalog changes. Across nine catalog configurations, coefficients fitted on the initial seven candidates remain effective through five additions, one version replacement, one removal, and one repricing, provided candidate evidence is refreshed.
 
 ## 📊 Results
 
-Evaluation covers 8,710 training and 3,738 test requests from ten LLMRouterBench datasets (AIME, ArenaHard, GPQA, HLE, LiveCodeBench, LiveMathBench, MMLU-Pro, SimpleQA, SWE-bench, τ²-bench) with 13 candidate LLMs, split by dataset and prompt at seed 42 with a 70% training fraction.
+Evaluation uses the recorded requests, responses, task scores, and generation costs of LLMRouterBench: ten datasets (AIME, ArenaHard, GPQA, HLE, LiveCodeBench, LiveMathBench, MMLU-Pro, SimpleQA, SWE-bench, τ²-bench) with 13 candidate LLM services, partitioned by dataset and prompt at seed 42 with a 70% training fraction, giving 8,710 training and 3,738 test requests.
 
 | Policy | Sample-Avg (%) | Dataset-Avg (%) | Cost ($) |
 |---|---|---|---|
 | **RouteAlign** | **63.07** | **68.64** | 110.42 |
-| RouteLLM (strongest competing router) | 61.69 | 66.42 | 109.27 |
+| RouteLLM (strongest competing policy) | 61.69 | 66.42 | 109.27 |
 | RouterDC | 58.56 | 65.24 | 122.62 |
 | AvengersPro | 58.91 | 63.63 | 61.35 |
 | GPT-5 (highest Dataset-Avg among candidates) | 58.37 | 65.11 | 124.82 |
 | Gemini 2.5 Pro (highest Sample-Avg among candidates) | 59.18 | 59.55 | 233.97 |
 
-* **Routing quality.** RouteAlign improves the strongest competing router by 1.38 Sample-Avg and 2.22 Dataset-Avg points, at 1.1% additional cost. It surpasses the strongest individual candidate under each metric: +4.70 Sample-Avg and +3.53 Dataset-Avg over GPT-5 at 11.5% lower generation cost.
-* **Model complementarity.** GPT-5 receives 1,852 of the 3,738 selections; the rest go to twelve alternatives. Request-specific allocation exceeds what any single candidate delivers, at lower cost than committing to the best one.
-* **Evidence ablations.** Removing all local quality evidence costs 3.12 Dataset-Avg points even after the scorer is refitted, the largest decrease among the evaluated removals. The cost preference moves expenditure from $124.82 to $110.42 while adding 0.37 Dataset-Avg points relative to λ = 0.
-* **Routing overhead.** With requirement profiles and embeddings cached, routing 3,738 requests takes about 119 seconds, or 31.9 ms per request. A serving measurement with the 0.6B profiler in the loop processes 51.2 requests per second at concurrency 32 with 0.60 s median latency.
-
-A supplementary pool-evolution study fits the scorer on the initial seven candidates and keeps its coefficients fixed through five additions, one version replacement, one removal, and one price change. RouteAlign-Frozen leads all nine configurations.
+* **RQ1, selection value.** RouteAlign improves on the strongest competing policy by 1.38 Sample-Avg and 2.22 Dataset-Avg points at 1.1% higher generation cost. It attains the highest per-dataset score, including ties, on seven of the ten datasets; the largest single gain over RouteLLM is on SWE-bench, from 16.67% to 33.33%. Against direct invocation, RouteAlign improves on GPT-5 by 4.70 Sample-Avg and 3.53 Dataset-Avg points over the same 3,738 requests while reducing expenditure by 11.5%, and exceeds the strongest individual Sample-Avg by 3.89 points. GPT-5 serves 1,852 selections; the remaining 1,886 requests go to twelve alternatives, so the gain over a strong default is realized through allocation across the catalog.
+* **RQ2, evidence contribution.** Removing all local quality evidence causes the largest decrease, 3.12 Dataset-Avg and 1.66 Sample-Avg points, even after the scorer is refitted. Requirement-conditioned estimates overlap: their individual removals trade small changes between the two averages rather than degrading both. Setting λ = 0 raises expenditure from $110.42 to $124.82, so the default preference saves 11.5% while adding 0.37 Dataset-Avg points relative to the cost-agnostic variant.
+* **RQ3, execution overhead.** With requirement profiles and embeddings cached, selection takes about 119 seconds over 3,738 requests, or 31.9 ms per request. A separate endpoint that also runs the 0.6B requirement profiler serves 51.2 requests per second at concurrency 32, with 0.60 s median and 0.74 s 95th-percentile latency and no observed errors. RouteAlign exchanges additional evidence aggregation for its quality gains; it is not the lowest-overhead policy in the comparison.
+* **RQ4, scorer reuse under catalog changes.** RouteAlign-Frozen, fitted only on the initial seven-candidate catalog, keeps the highest Dataset-Avg in all nine update configurations, with an equally weighted mean of 64.61% against 60.20% for the strongest baseline. Admitting GPT-5 raises Dataset-Avg from 64.18% to 68.55% with no coefficient update; removing it costs 4.52 points; halving the price of Gemini 2.5 Flash changes the score by 0.04 points.
 
 ## 🛠️ Quick Start
 
@@ -86,11 +81,11 @@ python -m adapter.build_question_bank --config config/adapter_config.yaml
 # 3. Grade candidate responses and aggregate model profiles
 python -m adapter.run_offline --config config/adapter_config.yaml
 
-# 4. Pure profile-based routing evaluation on the test split
+# 4. Pure profile-based selection evaluation on the test split
 python -m adapter.evaluate --config config/adapter_config.yaml
 ```
 
-The learned-fusion path used for the reported numbers continues with:
+The shared-scorer path used for the reported numbers continues with:
 
 ```bash
 # 5. Requirement profiles for the training split
@@ -105,7 +100,7 @@ python -m adapter.build_profile_from_records \
     --model-pool config/model_pool.yaml \
     --output data/seed42_split0.7/model_profiles_data_driven.json
 
-# 7. Fusion scoring and evaluation (see the bundle run.sh for all arguments)
+# 7. Scorer fitting and evaluation (see the bundle run.sh for all arguments)
 python -m adapter.evaluate_learned_fusion --config config/demo_router_config.yaml \
     --knn-k 150 --knn-beta 5.0 --knn-cap --ridge-alpha 1.0 --cost-lambda 0.4
 ```
@@ -116,13 +111,13 @@ The registry in `config/trained_models.yaml` covers six local checkpoints (SFT a
 
 ```bash
 bash scripts/serve_trained_models.sh start     # one sglang service per GPU
-python -m adapter.run_trained_eval             # profile-based routing per checkpoint
-python -m adapter.run_trained_fusion           # full fusion pipeline per checkpoint
+python -m adapter.run_trained_eval             # profile-based selection per checkpoint
+python -m adapter.run_trained_fusion           # full shared-scorer pipeline per checkpoint
 ```
 
 Both drivers support `--models` for subsets, `--max-samples-per-dataset` for smoke tests, and `--summary-only` for aggregation.
 
-### Routing engine as a library
+### Selection engine as a library
 
 ```python
 from src import DemoRouterConfig, RoutingEngine
@@ -137,7 +132,7 @@ The engine requires a reachable requirement-profiler endpoint (a local checkpoin
 ## 📁 Repository Structure
 
 ```
-├── src/                             # Routing framework
+├── src/                             # RouteAlign framework
 │   ├── capabilities.py              # Capability dimensions, difficulty levels, tiers
 │   ├── schemas.py                   # Request, grading, profile, and decision structures
 │   ├── prompts.py                   # Grading and requirement-profiler prompts
@@ -148,26 +143,26 @@ The engine requires a reachable requirement-profiler endpoint (a local checkpoin
 │   ├── profiling.py                 # Outcome-profile aggregation, confidence, tiers
 │   ├── task_profiler.py             # Online requirement prediction
 │   ├── request_features.py          # Request metadata detection
-│   ├── router.py                    # Feasibility filter and compatibility scoring
+│   ├── router.py                    # Eligibility filter and compatibility scoring
 │   ├── offline.py                   # Offline measurement pipeline with resume
-│   ├── engine.py                    # Online routing engine
+│   ├── engine.py                    # Online selection engine
 │   └── config.py                    # Configuration loading
 ├── adapter/                         # LLMRouterBench adapter and evaluation pipeline
 │   ├── data_prep.py                 # Benchmark conversion, split, stratified sampling
 │   ├── build_question_bank.py       # Metadata and capability-weight annotation
-│   ├── gen_model_pool.py            # Model-pool template with price estimation
+│   ├── gen_model_pool.py            # Candidate-registry template with price estimation
 │   ├── run_offline.py               # Offline grading and profiling driver
-│   ├── evaluate.py                  # Test-set routing evaluation
+│   ├── evaluate.py                  # Test-set selection evaluation
 │   ├── profile_train_tasks.py       # Requirement profiles for training requests
 │   ├── build_profile_from_records.py # Outcome profiles from training records
 │   ├── compute_router_embeddings.py  # Query embedding caches from the profiler
 │   ├── knn_priors.py                # Neighborhood statistics and local estimates
-│   ├── evaluate_with_cached_tasks.py # Routing from cached requirement profiles
+│   ├── evaluate_with_cached_tasks.py # Selection from cached requirement profiles
 │   ├── evaluate_strategy_map.py      # Conditional priors and difficulty strata
 │   ├── evaluate_learned_fusion.py    # Shared scorer fitting and evaluation
 │   ├── run_trained_eval.py          # Batch evaluation of fine-tuned profilers
-│   └── run_trained_fusion.py        # Full fusion pipeline per profiler checkpoint
-├── config/                          # Router, adapter, pool, and per-profiler configs
+│   └── run_trained_fusion.py        # Full shared-scorer pipeline per checkpoint
+├── config/                          # Framework, adapter, catalog, and per-profiler configs
 ├── scripts/serve_trained_models.sh  # sglang serving for local profiler checkpoints
 └── data/router_21K_Qwen3-0.6B_learned_fusion/  # Reproduction bundle with expected outputs
 ```
@@ -175,5 +170,5 @@ The engine requires a reachable requirement-profiler endpoint (a local checkpoin
 ## ⚙️ Configuration Notes
 
 * Credentials are never stored in configs. Any `api_key` or `base_url` written in all capitals is resolved from the environment at runtime, so set `GRADER_API_KEY`, `METADATA_API_KEY`, and `MODEL_ENDPOINT_API_KEY` before running stages that call external endpoints.
-* `config/model_pool.yaml` carries service attributes for the thirteen evaluated candidates. Prices are least-squares estimates from benchmark usage records and latency fields are placeholders; verify both against your provider before live routing.
+* `config/model_pool.yaml` carries service attributes for the thirteen evaluated candidates. Prices are least-squares estimates from benchmark usage records and latency fields are placeholders; verify both against your provider before live selection.
 * The requirement schema is defined once in `src/capabilities.py` and shared by the grader, the profiler, and the question-bank annotator, which keeps the three annotation procedures consistent by construction.

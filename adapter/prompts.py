@@ -1,8 +1,8 @@
 """
 适配模块提示词：题库元数据与能力权重标注（强模型）。
 
-能力维度与难度等级描述统一引用 demo_router.capabilities 中的权威定义
-（纯数据定义，非 LLM 调用模块），保证与 Demo Router 内部提示词完全一致。
+能力维度与难度等级描述统一引用 src.capabilities 中的权威定义
+（纯数据定义，非 LLM 调用模块），保证与 RouteAlign 内部提示词完全一致。
 """
 
 from src.capabilities import (

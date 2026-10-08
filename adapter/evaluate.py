@@ -1,7 +1,7 @@
 """
 测试集路由评估。
 
-对测试集中每道题执行 Demo Router 线上路由流程（结构化检测 → 任务画像 →
+对测试集中每道题执行 RouteAlign 线上路由流程（结构化检测 → 任务画像 →
 硬过滤 → 档位匹配 → 质量评分 → 选模型），然后离线查表取被选模型在该题上的
 既有 score/cost（与其他 baseline 的评估方式一致，不重新调用被路由模型）。
 
@@ -311,7 +311,7 @@ def run_evaluation(adapter_config: AdapterConfig):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Evaluate DemoRouter on test set")
+    parser = argparse.ArgumentParser(description="Evaluate RouteAlign on the test set")
     parser.add_argument(
         "--config",
         default="config/adapter_config.yaml",

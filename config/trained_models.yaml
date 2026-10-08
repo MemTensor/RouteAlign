@@ -1,6 +1,6 @@
-# 微调任务画像模型注册表（DemoRouter3_train）
+# 微调任务画像模型注册表（RouteAlign）
 #
-# 六个本地微调模型（/mnt/afs/chending_zjh/models），各自通过 sglang
+# 六个本地微调模型（下载或训练后置于 models/ 下），各自通过 sglang
 # 独立服务（scripts/serve_trained_models.sh 启动，每 GPU 一个服务）。
 # - router_21K_*：21K 任务画像数据 SFT 版本
 # - grpo_router_*：GRPO 强化学习版本
@@ -8,27 +8,27 @@
 
 models:
   router_21K_Qwen3-0.6B:
-    model_path: /mnt/afs/chending_zjh/models/router_21K_Qwen3-0.6B
+    model_path: models/router_21K_Qwen3-0.6B
     gpu: 0
     port: 30031
   router_21K_Qwen3-1.7B:
-    model_path: /mnt/afs/chending_zjh/models/router_21K_Qwen3-1.7B
+    model_path: models/router_21K_Qwen3-1.7B
     gpu: 1
     port: 30032
   router_21K_Qwen3-4B:
-    model_path: /mnt/afs/chending_zjh/models/router_21K_Qwen3-4B
+    model_path: models/router_21K_Qwen3-4B
     gpu: 2
     port: 30033
   grpo_router_Qwen3-0.6B:
-    model_path: /mnt/afs/chending_zjh/models/grpo_router_Qwen3-0.6B
+    model_path: models/grpo_router_Qwen3-0.6B
     gpu: 3
     port: 30034
   grpo_router_Qwen3-1.7B:
-    model_path: /mnt/afs/chending_zjh/models/grpo_router_Qwen3-1.7B
+    model_path: models/grpo_router_Qwen3-1.7B
     gpu: 4
     port: 30035
   grpo_router_Qwen3-4B:
-    model_path: /mnt/afs/chending_zjh/models/grpo_router_Qwen3-4B
+    model_path: models/grpo_router_Qwen3-4B
     gpu: 5
     port: 30036
 

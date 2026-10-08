@@ -1,10 +1,10 @@
 """
-Demo Router 统一 LLM 调用模块。
+RouteAlign 统一 LLM 调用模块。
 
-所有 Demo Router 内部对大模型的调用（打分模型、任务画像模型、最终回答模型）
+所有 RouteAlign 内部对大模型的调用（打分模型、任务画像模型、最终回答模型）
 均通过本模块进行，内置指数退避重试机制（最多 10 次）。
 
-注意：本模块仅供 Demo Router 使用，外部适配模块有自己独立的 LLM 调用实现。
+注意：本模块仅供 RouteAlign 使用，外部适配模块有自己独立的 LLM 调用实现。
 """
 
 import json
